@@ -1,0 +1,31 @@
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/boards?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: rjsgh7575
+
+    jpa:
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      open-in-view: false
+      show-sql: true
+      hibernate:
+        naming:
+          implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        format_sql: true
+        ddl-auto: create
+
+    logging:
+      level:
+        org:
+          hibernate:
+            SQL: DEBUG
+            type:
+              descriptor:
+                sql:
+                  BasicBinder: TRACE
